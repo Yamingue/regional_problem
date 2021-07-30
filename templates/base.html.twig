@@ -18,8 +18,10 @@
     <link rel="stylesheet" href="/mdb/css/mdb.min.css" />
   </head>
   <body>
-    
-<button class='btn btn-primary'>YAM-KING</div>
+  {% block header %}
+  {% include "inclusion/header.html.twig" %}
+  {% endblock %}
+    {% block body %}{% endblock %}
     <!-- MDB -->
     <script type="text/javascript" src="/mdb/js/mdb.min.js"></script>
   </body>

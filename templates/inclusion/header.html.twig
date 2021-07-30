@@ -1,0 +1,59 @@
+<header>
+	<!-- Navbar -->
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+		<!-- Container wrapper -->
+		<div
+			class="container-fluid">
+			<!-- Toggle button -->
+			<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<!-- Collapsible wrapper -->
+			<div
+				class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+				<!-- Left links -->
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+					</li>
+          <li class="nav-item">
+						<a class="nav-link" href="#">{% trans %}Region{% endtrans %} </a>
+					</li>
+          <li class="nav-item">
+						<a class="nav-link" href="#">{% trans %}Compagnie{% endtrans %} </a>
+					</li>
+
+					<!-- Navbar dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+							{% trans %}Language{% endtrans %}
+						</a>
+						<!-- Dropdown menu -->
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href="#">Francais</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">English</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- Left links -->
+			</div>
+			<!-- Collapsible wrapper -->
+		</div>
+		<!-- Container wrapper -->
+	</nav>
+	<!-- Navbar -->
+
+	<!-- Jumbotron -->
+	<div class="p-5 text-center bg-light" style="margin-top: 58px;">
+		<h1 class="mb-3">Heading</h1>
+		<h4 class="mb-3">Subheading</h4>
+		<a class="btn btn-primary" href="" role="button">Call to action</a>
+	</div>
+	<!-- Jumbotron -->
+</header>
