@@ -3,18 +3,120 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-sm-3 col-md-2">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              {% trans %}Region{% endtrans %}
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            data-mdb-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is hidden by default,
+              until the collapse plugin adds the appropriate classes that we use to style each
+              element. These classes control the overall appearance, as well as the showing and
+              hiding via CSS transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just about any HTML
+              can go within the <strong>.accordion-body</strong>, though the transition does
+              limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              {% trans %}Zone{% endtrans %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/www/net_problem/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/www/net_problem/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
-    </ul>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-mdb-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by
+              default, until the collapse plugin adds the appropriate classes that we use to
+              style each element. These classes control the overall appearance, as well as the
+              showing and hiding via CSS transitions. You can modify any of this with custom CSS
+              or overriding our default variables. It's also worth noting that just about any
+              HTML can go within the <strong>.accordion-body</strong>, though the transition
+              does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              {% trans %}Compagnie{% endtrans %}
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-mdb-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default,
+              until the collapse plugin adds the appropriate classes that we use to style each
+              element. These classes control the overall appearance, as well as the showing and
+              hiding via CSS transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just about any HTML
+              can go within the <strong>.accordion-body</strong>, though the transition does
+              limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-10">
+      <div class="row">
+        {% for row in range(0, 10, 1) %}
+          <section class="col-sm-4 mb-2">
+        
+            <div class="card">
+              <div class="card-body d-flex flex-row">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle me-3" height="50px"
+                  width="50px" alt="avatar" />
+                <div>
+                  <h5 class="card-title font-weight-bold mb-2">New spicy meals</h5>
+                  <p class="card-text"><i class="far fa-clock pe-2"></i>07/24/2018</p>
+                </div>
+              </div>
+              <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg"
+                  alt="Card image cap" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <p class="card-text collapse" id="collapseContent{{row}}">
+                  Recently, we added several exotic new dishes to our restaurant menu. They come from
+                  countries such as Mexico, Argentina, and Spain. Come to us, have some wine and enjoy
+                  our juicy meals from around the world.
+                </p>
+                <div class="d-flex justify-content-between">
+                  <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent{{row}}"
+                    role="button" aria-expanded="false" aria-controls="collapseContent{{row}}">Read more</a>
+                  <div>
+                    <i class="fas fa-share-alt text-muted p-md-1 my-1 me-2" data-mdb-toggle="tooltip"
+                      data-mdb-placement="top" title="Share this post"></i>
+                    <i class="far fa-heart text-muted p-md-1 my-1 me-0" data-mdb-toggle="tooltip" data-mdb-placement="top"
+                      title="I like it"></i>
+                      <i class="far fa-comments text-muted p-md-1 my-1 me-0" data-mdb-toggle="tooltip" data-mdb-placement="top"
+                      title="Comments"></i>
+                      
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </section>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

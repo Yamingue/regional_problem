@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ZoneRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Zone
      * @ORM\Column(type="datetime")
      */
     private $update_at;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Problem::class, mappedBy="zone")
+     */
+    private $problems;
+
+    public function __construct()
+    {
+        $this->problems = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,34 @@ class Zone
     public function setUpdateAt(\DateTimeInterface $update_at): self
     {
         $this->update_at = $update_at;
+
+        return $this;
+    }
+
+
+    /**
+     * @return Collection|Problem[]
+     */
+    public function getProblems(): Collection
+    {
+        return $this->problems;
+    }
+
+    public function addProblem(Problem $problem): self
+    {
+        if (!$this->problems->contains($problem)) {
+            $this->problems[] = $problem;
+            $problem->addZone($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProblem(Problem $problem): self
+    {
+        if ($this->problems->removeElement($problem)) {
+            $problem->removeZone($this);
+        }
 
         return $this;
     }
