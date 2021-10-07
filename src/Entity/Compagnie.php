@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=CompagnieRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Compagnie
 {
@@ -113,5 +114,22 @@ class Compagnie
         }
 
         return $this;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+     function persiste()
+    {
+        $this->create_at = new \DateTime();
+        $this->update_ate = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    function update()
+    {
+        $this->update_ate = new \DateTime();
     }
 }
