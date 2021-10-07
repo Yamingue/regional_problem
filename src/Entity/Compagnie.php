@@ -132,4 +132,8 @@ class Compagnie
     {
         $this->update_ate = new \DateTime();
     }
+
+    public function __toString(){
+        return $this->name;
+    }
 }
