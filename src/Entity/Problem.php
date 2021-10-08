@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ProblemRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Problem
 {
@@ -59,6 +60,11 @@ class Problem
      * @ORM\JoinColumn(nullable=false)
      */
     private $compagnie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="problems")
+     */
+    private $author;
 
 
     public function __construct()
@@ -179,7 +185,23 @@ class Problem
         return $this;
     }
 
-  
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
 
-    
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    function persiste()
+    {
+        $this->create_at = new \DateTime();
+    }
 }

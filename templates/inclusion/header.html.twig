@@ -16,14 +16,10 @@
 				<!-- Left links -->
 				<ul class="navbar-nav mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a class="nav-link active" aria-current="page" href="/">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">{% trans %}Region{% endtrans %}
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">{% trans %}Compagnie{% endtrans %}
+						<a class="nav-link" href="{{ path('profile') }}">{% trans %}Profile{% endtrans %}
 						</a>
 					</li>
 
@@ -45,10 +41,7 @@
 				</ul>
 				<!-- Left links -->
 			</div>
-			<!-- Collapsible wrapper -->
-			<div class="navbar-nav mb-2 mb-lg-0" id="navbarCenteredExample">
-				<a class="nav-item nav-link" href="#">Profil</a>
-			</div>
+			
 		</div>
 		<!-- Container wrapper -->
 	</nav>

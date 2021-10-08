@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
+    <title>{% block title %}Hello{% endblock %}</title>
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -23,7 +23,7 @@
   {% endblock %}
   {% block slider %}
     <!-- Jumbotron -->
-	<div class="p-5 text-center bg-light" style="margin-top: 58px;">
+	<div class="p-5 text-center bg-light">
 		<h1 class="mb-3">Heading</h1>
 		<h4 class="mb-3">Subheading</h4>
 		<a class="btn btn-primary" href="" role="button">Call to action</a>
